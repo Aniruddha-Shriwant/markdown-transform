@@ -14,7 +14,7 @@
 
 'use strict';
 
-const slateutil = require('./slateutil');
+const toslateutil = require('./toslateutil');
 
 const rules = {};
 
@@ -50,7 +50,7 @@ rules.Strong = (thing,processChildren,parameters) => {
     return processChildren(thing,'nodes',parameters);
 };
 rules.Text = (thing,processChildren,parameters) => {
-    return slateutil.handleFormattedText(thing, parameters);
+    return toslateutil.handleFormattedText(thing, parameters);
 };
 rules.BlockQuote = (thing,processChildren,parameters) => {
     return {
@@ -65,7 +65,7 @@ rules.Heading = (thing,processChildren,parameters) => {
     return {
         object: 'block',
         data: {},
-        type: slateutil.getHeadingType(thing),
+        type: toslateutil.getHeadingType(thing),
         children: processChildren(thing,'nodes',parameters)
     };
 };

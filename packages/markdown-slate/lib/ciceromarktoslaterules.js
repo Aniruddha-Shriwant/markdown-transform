@@ -14,7 +14,7 @@
 
 'use strict';
 
-const slateutil = require('./slateutil');
+const toslateutil = require('./toslateutil');
 
 const rules = {};
 
@@ -48,7 +48,7 @@ rules.Variable = (thing,processChildren,parameters) => {
     if (thing.identifiedBy) {
         data.identifiedBy = thing.identifiedBy;
     }
-    return slateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable', data, thing.value, parameters);
 };
 rules.FormattedVariable = (thing,processChildren,parameters) => {
     const data = { name: thing.name, format: thing.format };
@@ -58,7 +58,7 @@ rules.FormattedVariable = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return slateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable', data, thing.value, parameters);
 };
 rules.EnumVariable = (thing,processChildren,parameters) => {
     const data = { name: thing.name, enumValues: thing.enumValues };
@@ -68,7 +68,7 @@ rules.EnumVariable = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return slateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable', data, thing.value, parameters);
 };
 rules.Conditional = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
@@ -84,7 +84,7 @@ rules.Conditional = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return slateutil.handleConditionalVariable(data, nodes, localParameters);
+    return toslateutil.handleConditionalVariable(data, nodes, localParameters);
 };
 rules.Optional = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
@@ -100,7 +100,7 @@ rules.Optional = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return slateutil.handleOptionalVariable(data, nodes, localParameters);
+    return toslateutil.handleOptionalVariable(data, nodes, localParameters);
 };
 rules.Formula = (thing,processChildren,parameters) => {
     const data = { name: thing.name };
@@ -113,7 +113,7 @@ rules.Formula = (thing,processChildren,parameters) => {
     if (thing.code) {
         data.code = thing.code;
     }
-    return slateutil.handleFormula(data, thing.value, parameters);
+    return toslateutil.handleFormula(data, thing.value, parameters);
 };
 
 module.exports = rules;

@@ -14,11 +14,11 @@
 
 'use strict';
 
-const slateutil = require('./slateutil');
+const toslateutil = require('./toslateutil');
 const commonmarktoslaterules = require('./commonmarktoslaterules');
 
 /**
- * Converts a Markdown DOM to a Slate JSON.
+ * Converts a Markdown DOM to a Slate DOM
  */
 class ToSlateVisitor {
     /**
@@ -80,7 +80,7 @@ class ToSlateVisitor {
         }
         result = rule(thing,processChildren,parameters);
 
-        const cleanResult = slateutil.cleanup(result);
+        const cleanResult = toslateutil.cleanup(result);
         parameters.result = cleanResult;
     }
 }
