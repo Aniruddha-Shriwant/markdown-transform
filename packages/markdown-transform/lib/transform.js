@@ -69,6 +69,10 @@ const transformationGraph = {
             const t = new TemplateMarkTransformer();
             return t.toMarkdownTemplate(input);
         },
+        slate: (input,parameters,options) => {
+            const t = new SlateTransformer();
+            return t.fromTemplateMark(input);
+        },
     },
     markdown: {
         docs: 'Markdown (string)',

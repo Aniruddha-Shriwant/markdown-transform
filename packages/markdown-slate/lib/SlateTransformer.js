@@ -14,9 +14,12 @@
 
 'use strict';
 
-const CiceroMarkToSlateVisitor = require('./CiceroMarkToSlateVisitor');
-const FromSlate = require('./FromSlate');
 const CiceroMarkTransformer = require('@accordproject/markdown-cicero').CiceroMarkTransformer;
+const TemplateMarkTransformer = require('@accordproject/markdown-template').TemplateMarkTransformer;
+const toslateutil = require('./toslateutil');
+const FromSlateVisitor = require('./FromSlateVisitor');
+const CiceroMarkToSlateVisitor = require('./CiceroMarkToSlateVisitor');
+const TemplateMarkToSlateVisitor = require('./TemplateMarkToSlateVisitor');
 
 /**
  * Converts a CiceroMark DOM to/from a Slate DOM.
@@ -27,7 +30,9 @@ class SlateTransformer {
      */
     constructor() {
         this.ciceroMarkTransformer = new CiceroMarkTransformer();
-        this.serializer = this.ciceroMarkTransformer.getSerializer();
+        this.templateMarkTransformer = new TemplateMarkTransformer();
+        this.serializerCicero = this.ciceroMarkTransformer.getSerializer();
+        this.serializerTemplate = this.templateMarkTransformer.getSerializer();
     }
 
     /**
@@ -37,54 +42,41 @@ class SlateTransformer {
      */
     fromCiceroMark(input) {
         if(!input.getType) {
-            input = this.serializer.fromJSON(input);
+            input = this.serializerCicero.fromJSON(input);
         }
 
-        const CLAUSE = 'clause';
         const parameters = {};
-        parameters.serializer = this.serializer;
+        parameters.serializer = this.serializerCicero;
         parameters.result = {};
         const visitor = new CiceroMarkToSlateVisitor();
         input.accept( visitor, parameters );
         const result = {
             document: parameters.result
         };
-        const paragraphSpaceNodeJSON = {
-            object: 'block',
-            type: 'paragraph',
-            data: {
-            },
-            children: [
-                {
-                    object: 'text',
-                    text: ''
-                }
-            ]
+
+        return toslateutil.postProcessClauses(result);
+    }
+
+    /**
+     * Converts a TemplateMark DOM to a Slate DOM
+     * @param {*} input - TemplateMark DOM
+     * @returns {*} Slate JSON
+     */
+    fromTemplateMark(input) {
+        if(!input.getType) {
+            input = this.serializerTemplate.fromJSON(input);
+        }
+
+        const parameters = {};
+        parameters.serializer = this.serializerTemplate;
+        parameters.result = {};
+        const visitor = new TemplateMarkToSlateVisitor();
+        input.accept( visitor, parameters );
+        const result = {
+            document: parameters.result
         };
 
-        // Find any clauses next to each other, force in a paragraph between
-        if (result.document.children.length > 1) {
-            let newArray = [];
-            for (let i = 0; i <= result.document.children.length-1; i++) {
-                newArray.push(result.document.children[i]);
-                if (result.document.children[i].type === CLAUSE &&
-                    result.document.children[i + 1] &&
-                    result.document.children[i + 1].type === CLAUSE) {
-                    newArray.push(paragraphSpaceNodeJSON);
-                }
-            }
-            result.document.children = newArray;
-        }
-
-        // If the final node is a clause, force in a paragraph after
-        const lastNodeType = result.document.children[result.document.children.length - 1]
-            ? result.document.children[result.document.children.length - 1].type
-            : null;
-
-        if (lastNodeType === CLAUSE) {
-            result.document.children.push(paragraphSpaceNodeJSON);
-        }
-        return result;
+        return toslateutil.postProcessClauses(result);
     }
 
     /**
@@ -94,7 +86,7 @@ class SlateTransformer {
      */
     toCiceroMark(value) {
         const clonedValue = JSON.parse(JSON.stringify(value)); // Workaround in case value is immutable
-        const visitor = new FromSlate();
+        const visitor = new FromSlateVisitor();
         return visitor.fromSlate(clonedValue);
     }
 

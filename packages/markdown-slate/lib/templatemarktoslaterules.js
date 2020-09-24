@@ -18,7 +18,7 @@ const toslateutil = require('./toslateutil');
 
 const rules = {};
 
-rules.Clause = (thing,processChildren,parameters) => {
+rules.ClauseDefinition = (thing,processChildren,parameters) => {
     const data = {};
     data.name = thing.name;
     if (thing.src) {
@@ -32,12 +32,12 @@ rules.Clause = (thing,processChildren,parameters) => {
     }
     return {
         object: 'block',
-        type: 'clause',
+        type: 'clause_definition',
         data: data,
         children: processChildren(thing,'nodes',parameters),
     };
 };
-rules.Variable = (thing,processChildren,parameters) => {
+rules.VariableDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name };
     if (thing.elementType) {
         data.elementType = thing.elementType;
@@ -48,9 +48,9 @@ rules.Variable = (thing,processChildren,parameters) => {
     if (thing.identifiedBy) {
         data.identifiedBy = thing.identifiedBy;
     }
-    return toslateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable_definition', data, thing.value, parameters);
 };
-rules.FormattedVariable = (thing,processChildren,parameters) => {
+rules.FormattedVariableDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name, format: thing.format };
     if (thing.elementType) {
         data.elementType = thing.elementType;
@@ -58,9 +58,9 @@ rules.FormattedVariable = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable_definition', data, thing.value, parameters);
 };
-rules.EnumVariable = (thing,processChildren,parameters) => {
+rules.EnumVariableDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name, enumValues: thing.enumValues };
     if (thing.elementType) {
         data.elementType = thing.elementType;
@@ -68,9 +68,9 @@ rules.EnumVariable = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleVariable('variable', data, thing.value, parameters);
+    return toslateutil.handleVariable('variable_definition', data, thing.value, parameters);
 };
-rules.Conditional = (thing,processChildren,parameters) => {
+rules.ConditionalDefinition = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
     parameters.strong = false;
     parameters.italic = false;
@@ -84,9 +84,9 @@ rules.Conditional = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleBlockDefinition('conditional', data, nodes, localParameters);
+    return toslateutil.handleBlockDefinition('conditional_definition', data, nodes, localParameters);
 };
-rules.Optional = (thing,processChildren,parameters) => {
+rules.OptionalDefinition = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
     parameters.strong = false;
     parameters.italic = false;
@@ -100,9 +100,9 @@ rules.Optional = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleBlockDefinition('optional', data, nodes, localParameters);
+    return toslateutil.handleBlockDefinition('optional_definition', data, nodes, localParameters);
 };
-rules.Formula = (thing,processChildren,parameters) => {
+rules.FormulaDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name };
     if (thing.elementType) {
         data.elementType = thing.elementType;

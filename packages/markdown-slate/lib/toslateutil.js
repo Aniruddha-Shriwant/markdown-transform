@@ -20,7 +20,11 @@
  * @return {string} the unquoted string
  */
 function unquoteString(value) {
-    return value.substring(1,value.length-1);
+    try {
+        return value.substring(1,value.length-1);
+    } catch(err) {
+        return value;
+    }
 }
 
 /**
@@ -84,8 +88,28 @@ function handleFormattedText(thing, parameters) {
         object: 'text',
         text: getText(thing)};
 
-    this.applyMarks(textNode, parameters);
+    applyMarks(textNode, parameters);
     return textNode;
+}
+
+/**
+ * Converts a conditional variable node to a slate node with marks
+ * @param {string} name - the name of the block
+ * @param {*} data - the data for the conditional variable
+ * @param {*} nodes - the conditional nodes
+ * @param {*} parameters the parameters
+ * @returns {*} the slate text node with marks
+ */
+function handleBlockDefinition(name, data, nodes, parameters) {
+    const inlineNode = {
+        object: 'inline',
+        type: name,
+        data: data,
+        children: nodes
+    };
+    applyMarks(inlineNode,parameters);
+
+    return inlineNode;
 }
 
 /**
@@ -103,53 +127,7 @@ function handleVariable(type, data, text, parameters) {
         text: fixedText
     };
 
-    const inlineNode = {
-        object: 'inline',
-        type: type,
-        data: data,
-        children: [textNode]
-    };
-    this.applyMarks(inlineNode,parameters);
-
-    return inlineNode;
-}
-
-/**
- * Converts a conditional variable node to a slate node with marks
- * @param {*} data - the data for the conditional variable
- * @param {*} nodes - the conditional nodes
- * @param {*} parameters the parameters
- * @returns {*} the slate text node with marks
- */
-function handleConditionalVariable(data, nodes, parameters) {
-    const inlineNode = {
-        object: 'inline',
-        type: 'conditional',
-        data: data,
-        children: nodes
-    };
-    this.applyMarks(inlineNode,parameters);
-
-    return inlineNode;
-}
-
-/**
- * Converts a optional variable node to a slate node with marks
- * @param {*} data - the data for the optional variable
- * @param {*} nodes - the optional nodes
- * @param {*} parameters the parameters
- * @returns {*} the slate text node with marks
- */
-function handleOptionalVariable(data, nodes, parameters) {
-    const inlineNode = {
-        object: 'inline',
-        type: 'optional',
-        data: data,
-        children: nodes
-    };
-    this.applyMarks(inlineNode,parameters);
-
-    return inlineNode;
+    return handleBlockDefinition(type, data, [textNode], parameters);
 }
 
 /**
@@ -164,16 +142,54 @@ function handleFormula(data, text, parameters) {
         object: 'text',
         text: text
     };
+    return handleBlockDefinition('formula', data, [textNode], parameters);
+}
 
-    const inlineNode = {
-        object: 'inline',
-        type: 'formula',
-        data: data,
-        children: [textNode]
+/**
+ * post processing for clause nodes
+ * @param {object} node - the slate node
+ * @return {obejct} the post processed nodes
+ */
+function postProcessClauses(node) {
+    const result = node;
+
+    const CLAUSE = 'clause';
+    const paragraphSpaceNodeJSON = {
+        object: 'block',
+        type: 'paragraph',
+        data: {
+        },
+        children: [
+            {
+                object: 'text',
+                text: ''
+            }
+        ]
     };
-    this.applyMarks(inlineNode,parameters);
 
-    return inlineNode;
+    // Find any clauses next to each other, force in a paragraph between
+    if (result.document.children.length > 1) {
+        let newArray = [];
+        for (let i = 0; i <= result.document.children.length-1; i++) {
+            newArray.push(result.document.children[i]);
+            if (result.document.children[i].type === CLAUSE &&
+                result.document.children[i + 1] &&
+                result.document.children[i + 1].type === CLAUSE) {
+                newArray.push(paragraphSpaceNodeJSON);
+            }
+        }
+        result.document.children = newArray;
+    }
+
+    // If the final node is a clause, force in a paragraph after
+    const lastNodeType = result.document.children[result.document.children.length - 1]
+        ? result.document.children[result.document.children.length - 1].type
+        : null;
+
+    if (lastNodeType === CLAUSE) {
+        result.document.children.push(paragraphSpaceNodeJSON);
+    }
+    return result;
 }
 
 /**
@@ -225,9 +241,9 @@ module.exports = {
     getText,
     getHeadingType,
     handleFormattedText,
+    handleBlockDefinition,
     handleVariable,
-    handleConditionalVariable,
-    handleOptionalVariable,
     handleFormula,
     cleanup,
+    postProcessClauses,
 };

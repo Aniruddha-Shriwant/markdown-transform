@@ -225,6 +225,13 @@ class TemplateMarkTransformer {
         return this.draftCiceroMark(data, parserManager, templateKind, options);
     }
 
+    /**
+     * Get TemplateMark serializer
+     * @return {*} templatemark serializer
+     */
+    getSerializer() {
+        return templateMarkManager.serializer;
+    }
 }
 
 module.exports = TemplateMarkTransformer;

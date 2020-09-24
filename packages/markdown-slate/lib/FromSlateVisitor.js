@@ -22,7 +22,7 @@ const fromslaterules = require('./fromslaterules');
 /**
  * Converts a Slate DOM to a Markdown DOM
  */
-class FromSlate {
+class FromSlateVisitor {
     /**
      * Construct a visitor from slate
      */
@@ -93,4 +93,4 @@ class FromSlate {
     }
 }
 
-module.exports = FromSlate;
+module.exports = FromSlateVisitor;
