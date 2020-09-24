@@ -14,7 +14,7 @@
 
 'use strict';
 
-const ToSlateVisitor = require('./ToSlateVisitor');
+const CiceroMarkToSlateVisitor = require('./CiceroMarkToSlateVisitor');
 const slateToCiceroMarkDom = require('./slateToCiceroMarkDom');
 const CiceroMarkTransformer = require('@accordproject/markdown-cicero').CiceroMarkTransformer;
 
@@ -44,7 +44,7 @@ class SlateTransformer {
         const parameters = {};
         parameters.serializer = this.serializer;
         parameters.result = {};
-        const visitor = new ToSlateVisitor();
+        const visitor = new CiceroMarkToSlateVisitor();
         input.accept( visitor, parameters );
         const result = {
             document: parameters.result
