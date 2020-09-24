@@ -21,42 +21,7 @@ const fromslateutil = require('./fromslateutil');
 
 const rules = {};
 
-rules.clause = (node,processNodes) => {
-    // console.log(JSON.stringify(node, null, 4));
-    const result = {$class : `${NS_PREFIX_CiceroMarkModel}Clause`, name: node.data.name, nodes: []};
-    if (node.data.elementType) {
-        result.elementType = node.data.elementType;
-    }
-    if (node.data.decorators) {
-        result.decorators = node.data.decorators;
-    }
-    if (node.data.src) {
-        result.src = node.data.src;
-    }
-    return result;
-};
-rules.conditional = (node,processNodes) => {
-    const isTrue = node.data.isTrue;
-    let whenTrueNodes = [];
-    processNodes(whenTrueNodes, node.data.whenTrue);
-    let whenFalseNodes = [];
-    processNodes(whenFalseNodes, node.data.whenFalse);
-    return fromslateutil.handleConditional(node,isTrue,whenTrueNodes,whenFalseNodes);
-};
-rules.optional = (node,processNodes) => {
-    const hasSome = node.data.hasSome;
-    let whenSomeNodes = [];
-    processNodes(whenSomeNodes, node.data.whenSome);
-    let whenNoneNodes = [];
-    processNodes(whenNoneNodes, node.data.whenNone);
-    return fromslateutil.handleOptional(node,hasSome,whenSomeNodes,whenNoneNodes);
-};
-rules.variable = (node,processNodes) => {
-    return fromslateutil.handleVariable(node);
-};
-rules.formula = (node,processNodes) => {
-    return fromslateutil.handleFormula(node);
-};
+// CommonMark rules
 rules.paragraph = (node,processNodes) => {
     return {$class : `${NS_PREFIX_CommonMarkModel}Paragraph`, nodes: []};
 };
@@ -99,6 +64,17 @@ rules.html_block = (node,processNodes) => {
 rules.html_inline = (node,processNodes) => {
     return {$class : `${NS_PREFIX_CommonMarkModel}HtmlInline`, text: node.data.content};
 };
+rules.link = (node,processNodes) => {
+    return {$class : `${NS_PREFIX_CommonMarkModel}Link`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+};
+rules.image = (node,processNodes) => {
+    return {$class : `${NS_PREFIX_CommonMarkModel}Image`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+};
+rules.list_item = (node,processNodes) => {
+    return {$class : `${NS_PREFIX_CommonMarkModel}Item`, nodes: []};
+};
+
+// Shared CommonMark / CiceroMark rules ???
 rules.ol_list = (node,processNodes) => {
     let result;
     if (node.data.type === 'variable') {
@@ -129,14 +105,43 @@ rules.ul_list = (node,processNodes) => {
     }
     return result;
 };
-rules.list_item = (node,processNodes) => {
-    return {$class : `${NS_PREFIX_CommonMarkModel}Item`, nodes: []};
+
+// CiceroMark rules
+rules.clause = (node,processNodes) => {
+    // console.log(JSON.stringify(node, null, 4));
+    const result = {$class : `${NS_PREFIX_CiceroMarkModel}Clause`, name: node.data.name, nodes: []};
+    if (node.data.elementType) {
+        result.elementType = node.data.elementType;
+    }
+    if (node.data.decorators) {
+        result.decorators = node.data.decorators;
+    }
+    if (node.data.src) {
+        result.src = node.data.src;
+    }
+    return result;
 };
-rules.link = (node,processNodes) => {
-    return {$class : `${NS_PREFIX_CommonMarkModel}Link`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+rules.conditional = (node,processNodes) => {
+    const isTrue = node.data.isTrue;
+    let whenTrueNodes = [];
+    processNodes(whenTrueNodes, node.data.whenTrue);
+    let whenFalseNodes = [];
+    processNodes(whenFalseNodes, node.data.whenFalse);
+    return fromslateutil.handleConditional(node,isTrue,whenTrueNodes,whenFalseNodes);
 };
-rules.image = (node,processNodes) => {
-    return {$class : `${NS_PREFIX_CommonMarkModel}Image`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+rules.optional = (node,processNodes) => {
+    const hasSome = node.data.hasSome;
+    let whenSomeNodes = [];
+    processNodes(whenSomeNodes, node.data.whenSome);
+    let whenNoneNodes = [];
+    processNodes(whenNoneNodes, node.data.whenNone);
+    return fromslateutil.handleOptional(node,hasSome,whenSomeNodes,whenNoneNodes);
+};
+rules.variable = (node,processNodes) => {
+    return fromslateutil.handleVariable(node);
+};
+rules.formula = (node,processNodes) => {
+    return fromslateutil.handleFormula(node);
 };
 
 module.exports = rules;
