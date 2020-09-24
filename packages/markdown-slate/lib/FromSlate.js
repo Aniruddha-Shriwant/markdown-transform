@@ -14,7 +14,7 @@
 
 'use strict';
 
-const NS = 'org.accordproject.commonmark';
+const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
 
 const fromslateutil = require('./fromslateutil');
 const fromslaterules = require('./fromslaterules');
@@ -38,7 +38,7 @@ class FromSlate {
     fromSlate(value) {
 
         const result = {
-            $class : 'org.accordproject.commonmark.Document',
+            $class : `${NS_PREFIX_CommonMarkModel}Document`,
             xmlns : 'http://commonmark.org/xml/1.0',
             nodes : []
         };
@@ -82,7 +82,7 @@ class FromSlate {
             if(node.children && result && result.nodes && handleChildren) {
                 this.processChildren(result.nodes[0] ? result.nodes[0] : result, node.children);
                 if (result.nodes.length === 0) {
-                    result.nodes.push({$class : `${NS}.Text`, text : ''});
+                    result.nodes.push({$class : `${NS_PREFIX_CommonMarkModel}Text`, text : ''});
                 }
             }
 

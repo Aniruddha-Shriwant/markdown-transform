@@ -14,8 +14,8 @@
 
 'use strict';
 
-const NS = 'org.accordproject.commonmark';
-const NS_CICERO = 'org.accordproject.ciceromark';
+const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
+const { NS_PREFIX_CiceroMarkModel } = require('@accordproject/markdown-cicero').CiceroMarkModel;
 
 const fromslateutil = require('./fromslateutil');
 
@@ -23,7 +23,7 @@ const rules = {};
 
 rules.clause = (node,processNodes) => {
     // console.log(JSON.stringify(node, null, 4));
-    const result = {$class : `${NS_CICERO}.Clause`, name: node.data.name, nodes: []};
+    const result = {$class : `${NS_PREFIX_CiceroMarkModel}Clause`, name: node.data.name, nodes: []};
     if (node.data.elementType) {
         result.elementType = node.data.elementType;
     }
@@ -58,51 +58,51 @@ rules.formula = (node,processNodes) => {
     return fromslateutil.handleFormula(node);
 };
 rules.paragraph = (node,processNodes) => {
-    return {$class : `${NS}.Paragraph`, nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Paragraph`, nodes: []};
 };
 rules.softbreak = (node,processNodes) => {
-    return {$class : `${NS}.Softbreak`};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Softbreak`};
 };
 rules.linebreak = (node,processNodes) => {
-    return {$class : `${NS}.Linebreak`};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Linebreak`};
 };
 rules.horizontal_rule = (node,processNodes) => {
-    return {$class : `${NS}.ThematicBreak`};
+    return {$class : `${NS_PREFIX_CommonMarkModel}ThematicBreak`};
 };
 rules.heading_one = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '1', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '1', nodes: []};
 };
 rules.heading_two = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '2', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '2', nodes: []};
 };
 rules.heading_three = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '3', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '3', nodes: []};
 };
 rules.heading_four = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '4', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '4', nodes: []};
 };
 rules.heading_five = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '5', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '5', nodes: []};
 };
 rules.heading_six = (node,processNodes) => {
-    return {$class : `${NS}.Heading`, level : '6', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Heading`, level : '6', nodes: []};
 };
 rules.block_quote = (node,processNodes) => {
-    return {$class : `${NS}.BlockQuote`, nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}BlockQuote`, nodes: []};
 };
 rules.code_block = (node,processNodes) => {
-    return {$class : `${NS}.CodeBlock`, text: fromslateutil.getText(node)};
+    return {$class : `${NS_PREFIX_CommonMarkModel}CodeBlock`, text: fromslateutil.getText(node)};
 };
 rules.html_block = (node,processNodes) => {
-    return {$class : `${NS}.HtmlBlock`, text: fromslateutil.getText(node)};
+    return {$class : `${NS_PREFIX_CommonMarkModel}HtmlBlock`, text: fromslateutil.getText(node)};
 };
 rules.html_inline = (node,processNodes) => {
-    return {$class : `${NS}.HtmlInline`, text: node.data.content};
+    return {$class : `${NS_PREFIX_CommonMarkModel}HtmlInline`, text: node.data.content};
 };
 rules.ol_list = (node,processNodes) => {
     let result;
     if (node.data.type === 'variable') {
-        result = {$class : `${NS_CICERO}.ListBlock`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+        result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
         if (node.data.elementType) {
             result.elementType = node.data.elementType;
         }
@@ -110,14 +110,14 @@ rules.ol_list = (node,processNodes) => {
             result.decorators = node.data.decorators;
         }
     } else {
-        result = {$class : `${NS}.List`, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+        result = {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
     }
     return result;
 };
 rules.ul_list = (node,processNodes) => {
     let result;
     if (node.data.type === 'variable') {
-        result = {$class : `${NS_CICERO}.ListBlock`, name: node.data.name, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+        result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
         if (node.data.elementType) {
             result.elementType = node.data.elementType;
         }
@@ -125,18 +125,18 @@ rules.ul_list = (node,processNodes) => {
             result.decorators = node.data.decorators;
         }
     } else {
-        result = {$class : `${NS}.List`, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+        result = {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
     }
     return result;
 };
 rules.list_item = (node,processNodes) => {
-    return {$class : `${NS}.Item`, nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Item`, nodes: []};
 };
 rules.link = (node,processNodes) => {
-    return {$class : `${NS}.Link`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Link`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
 };
 rules.image = (node,processNodes) => {
-    return {$class : `${NS}.Image`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
+    return {$class : `${NS_PREFIX_CommonMarkModel}Image`, destination: node.data.href, title: node.data.title ? node.data.title : '', nodes: []};
 };
 
 module.exports = rules;

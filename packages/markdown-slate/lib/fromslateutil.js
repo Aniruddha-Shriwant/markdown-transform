@@ -14,8 +14,8 @@
 
 'use strict';
 
-const NS = 'org.accordproject.commonmark';
-const NS_CICERO = 'org.accordproject.ciceromark';
+const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
+const { NS_PREFIX_CiceroMarkModel } = require('@accordproject/markdown-cicero').CiceroMarkModel;
 
 /**
  * Removes nodes if they are an empty paragraph
@@ -25,9 +25,9 @@ const NS_CICERO = 'org.accordproject.ciceromark';
 function removeEmptyParagraphs(input) {
     let nodesWithoutBlankParagraphs = [];
     input.nodes.forEach(node => {
-        if (node.$class === 'org.accordproject.commonmark.Paragraph' &&
+        if (node.$class === `${NS_PREFIX_CommonMarkModel}Paragraph` &&
             node.nodes.length === 1 &&
-            node.nodes[0].$class === 'org.accordproject.commonmark.Text' &&
+            node.nodes[0].$class === `${NS_PREFIX_CommonMarkModel}Text` &&
             node.nodes[0].text === '') {
             return;
         }
@@ -84,11 +84,11 @@ function handleMarks(slateNode,newNode) {
     const isItalic = slateNode.italic;
 
     if (isBold) {
-        strong = {$class : `${NS}.Strong`, nodes: []};
+        strong = {$class : `${NS_PREFIX_CommonMarkModel}Strong`, nodes: []};
     }
 
     if (isItalic) {
-        emph  = {$class : `${NS}.Emph`, nodes: []};
+        emph  = {$class : `${NS_PREFIX_CommonMarkModel}Emph`, nodes: []};
     }
 
     if(strong) {
@@ -113,9 +113,9 @@ function handleText(node) {
     const isCode = node.code;
     if (node.object === 'text' && node.text === '') { return null; }
     if (isCode) {
-        result = {$class : `${NS}.Code`, text: node.text};
+        result = {$class : `${NS_PREFIX_CommonMarkModel}Code`, text: node.text};
     } else {
-        result = {$class : `${NS}.Text`, text : node.text};
+        result = {$class : `${NS_PREFIX_CommonMarkModel}Text`, text : node.text};
     }
 
     return handleMarks(node,result);
@@ -135,7 +135,7 @@ function handleVariable(node) {
     const data = node.data;
 
     const baseName = Object.prototype.hasOwnProperty.call(data,'format') ? 'FormattedVariable' : (Object.prototype.hasOwnProperty.call(data,'enumValues') ? 'EnumVariable' : 'Variable');
-    const className = `${NS_CICERO}.${baseName}`;
+    const className = `${NS_PREFIX_CiceroMarkModel}${baseName}`;
 
     result = {
         $class : className,
@@ -178,7 +178,7 @@ function handleConditional(node, isTrue, whenTrue, whenFalse) {
     const data = node.data;
 
     let result = {
-        $class : `${NS_CICERO}.Conditional`,
+        $class : `${NS_PREFIX_CiceroMarkModel}Conditional`,
         name : data.name,
         nodes: [],
     };
@@ -209,7 +209,7 @@ function handleOptional(node, hasSome, whenSome, whenNone) {
     const data = node.data;
 
     let result = {
-        $class : `${NS_CICERO}.Optional`,
+        $class : `${NS_PREFIX_CiceroMarkModel}Optional`,
         name : data.name,
         nodes: [],
     };
@@ -239,7 +239,7 @@ function handleFormula(node) {
     const textNode = node.children[0]; // inlines always contain a single text node
     node.children = []; // Reset the children for the inline to avoid recursion
 
-    const className = `${NS_CICERO}.Formula`;
+    const className = `${NS_PREFIX_CiceroMarkModel}Formula`;
 
     result = {
         $class : className,
