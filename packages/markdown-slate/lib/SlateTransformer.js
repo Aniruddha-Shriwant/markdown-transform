@@ -16,10 +16,58 @@
 
 const CiceroMarkTransformer = require('@accordproject/markdown-cicero').CiceroMarkTransformer;
 const TemplateMarkTransformer = require('@accordproject/markdown-template').TemplateMarkTransformer;
-const toslateutil = require('./toslateutil');
+
 const CiceroMarkFromSlateVisitor = require('./CiceroMarkFromSlateVisitor');
+const TemplateMarkFromSlateVisitor = require('./TemplateMarkFromSlateVisitor');
 const CiceroMarkToSlateVisitor = require('./CiceroMarkToSlateVisitor');
 const TemplateMarkToSlateVisitor = require('./TemplateMarkToSlateVisitor');
+
+/**
+ * post processing for clause nodes
+ * @param {object} node - the slate node
+ * @return {obejct} the post processed nodes
+ */
+function postProcessClauses(node) {
+    const result = node;
+
+    const CLAUSE = 'clause';
+    const paragraphSpaceNodeJSON = {
+        object: 'block',
+        type: 'paragraph',
+        data: {
+        },
+        children: [
+            {
+                object: 'text',
+                text: ''
+            }
+        ]
+    };
+
+    // Find any clauses next to each other, force in a paragraph between
+    if (result.document.children.length > 1) {
+        let newArray = [];
+        for (let i = 0; i <= result.document.children.length-1; i++) {
+            newArray.push(result.document.children[i]);
+            if (result.document.children[i].type === CLAUSE &&
+                result.document.children[i + 1] &&
+                result.document.children[i + 1].type === CLAUSE) {
+                newArray.push(paragraphSpaceNodeJSON);
+            }
+        }
+        result.document.children = newArray;
+    }
+
+    // If the final node is a clause, force in a paragraph after
+    const lastNodeType = result.document.children[result.document.children.length - 1]
+        ? result.document.children[result.document.children.length - 1].type
+        : null;
+
+    if (lastNodeType === CLAUSE) {
+        result.document.children.push(paragraphSpaceNodeJSON);
+    }
+    return result;
+}
 
 /**
  * Converts a CiceroMark DOM to/from a Slate DOM.
@@ -54,7 +102,7 @@ class SlateTransformer {
             document: parameters.result
         };
 
-        return toslateutil.postProcessClauses(result);
+        return postProcessClauses(result);
     }
 
     /**
@@ -76,7 +124,7 @@ class SlateTransformer {
             document: parameters.result
         };
 
-        return toslateutil.postProcessClauses(result);
+        return postProcessClauses(result);
     }
 
     /**
@@ -87,6 +135,17 @@ class SlateTransformer {
     toCiceroMark(value) {
         const clonedValue = JSON.parse(JSON.stringify(value)); // Workaround in case value is immutable
         const visitor = new CiceroMarkFromSlateVisitor();
+        return visitor.fromSlate(clonedValue);
+    }
+
+    /**
+     * Converts a Slate JSON to TemplateMark DOM
+     * @param {*} value - Slate json
+     * @returns {*} the TemplateMark DOM
+     */
+    toTemplateMark(value) {
+        const clonedValue = JSON.parse(JSON.stringify(value)); // Workaround in case value is immutable
+        const visitor = new TemplateMarkFromSlateVisitor();
         return visitor.fromSlate(clonedValue);
     }
 

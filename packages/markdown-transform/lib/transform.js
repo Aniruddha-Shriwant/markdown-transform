@@ -252,6 +252,10 @@ const transformationGraph = {
             const t = new SlateTransformer();
             return t.toCiceroMark(input, options);
         },
+        templatemark: (input,parameters,options) => {
+            const t = new SlateTransformer();
+            return t.toTemplateMark(input, options);
+        },
     },
 };
 

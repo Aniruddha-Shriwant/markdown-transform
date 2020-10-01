@@ -146,53 +146,6 @@ function handleFormula(data, text, parameters) {
 }
 
 /**
- * post processing for clause nodes
- * @param {object} node - the slate node
- * @return {obejct} the post processed nodes
- */
-function postProcessClauses(node) {
-    const result = node;
-
-    const CLAUSE = 'clause';
-    const paragraphSpaceNodeJSON = {
-        object: 'block',
-        type: 'paragraph',
-        data: {
-        },
-        children: [
-            {
-                object: 'text',
-                text: ''
-            }
-        ]
-    };
-
-    // Find any clauses next to each other, force in a paragraph between
-    if (result.document.children.length > 1) {
-        let newArray = [];
-        for (let i = 0; i <= result.document.children.length-1; i++) {
-            newArray.push(result.document.children[i]);
-            if (result.document.children[i].type === CLAUSE &&
-                result.document.children[i + 1] &&
-                result.document.children[i + 1].type === CLAUSE) {
-                newArray.push(paragraphSpaceNodeJSON);
-            }
-        }
-        result.document.children = newArray;
-    }
-
-    // If the final node is a clause, force in a paragraph after
-    const lastNodeType = result.document.children[result.document.children.length - 1]
-        ? result.document.children[result.document.children.length - 1].type
-        : null;
-
-    if (lastNodeType === CLAUSE) {
-        result.document.children.push(paragraphSpaceNodeJSON);
-    }
-    return result;
-}
-
-/**
  * Cleanup Slate node (post processing)
  * @param {object} node - the slate node
  * @returns {object} the cleaned up slate node
@@ -245,5 +198,4 @@ module.exports = {
     handleVariable,
     handleFormula,
     cleanup,
-    postProcessClauses,
 };

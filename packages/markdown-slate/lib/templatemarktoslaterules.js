@@ -93,7 +93,7 @@ rules.ConditionalDefinition = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
     parameters.strong = false;
     parameters.italic = false;
-    const nodes = processChildren(thing,'nodes',parameters);
+    const nodes = [];
     const whenTrue = processChildren(thing,'whenTrue',parameters);
     const whenFalse = processChildren(thing,'whenFalse',parameters);
     const data = { name: thing.name, isTrue: thing.isTrue, whenTrue: whenTrue, whenFalse: whenFalse };
@@ -109,7 +109,7 @@ rules.OptionalDefinition = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);
     parameters.strong = false;
     parameters.italic = false;
-    const nodes = processChildren(thing,'nodes',parameters);
+    const nodes = [];
     const whenSome = processChildren(thing,'whenSome',parameters);
     const whenNone = processChildren(thing,'whenNone',parameters);
     const data = { name: thing.name, hasSome: thing.hasSome, whenSome: whenSome, whenNone: whenNone };

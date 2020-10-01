@@ -16,6 +16,7 @@
 
 const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
 const { NS_PREFIX_CiceroMarkModel } = require('@accordproject/markdown-cicero').CiceroMarkModel;
+const { NS_PREFIX_TemplateMarkModel } = require('@accordproject/markdown-template').TemplateMarkModel;
 
 /**
  * Removes nodes if they are an empty paragraph
@@ -167,6 +168,45 @@ function handleVariable(node) {
 }
 
 /**
+ * Handles a variable definition node
+ * @param {*} node the slate variable node
+ * @returns {*} the ast node
+ */
+function handleVariableDefinition(node) {
+    let result = null;
+
+    node.children = []; // Reset the children for the inline to avoid recursion
+
+    const data = node.data;
+
+    const baseName = Object.prototype.hasOwnProperty.call(data,'format') ? 'FormattedVariableDefinition' : (Object.prototype.hasOwnProperty.call(data,'enumValues') ? 'EnumVariableDefinition' : 'VariableDefinition');
+    const className = `${NS_PREFIX_TemplateMarkModel}${baseName}`;
+
+    result = {
+        $class : className,
+        name : data.name,
+    };
+
+    if (Object.prototype.hasOwnProperty.call(data,'format')) {
+        result.format = data.format;
+    }
+    if (node.data.identifiedBy) {
+        result.identifiedBy = node.data.identifiedBy;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'enumValues')) {
+        result.enumValues = data.enumValues;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'elementType')) {
+        result.elementType = data.elementType;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'decorators')) {
+        result.decorators = data.decorators;
+    }
+
+    return handleMarks(node,result);
+}
+
+/**
  * Handles a conditional node
  * @param {*} node the slate variable node
  * @param {*} isTrue is this conditional true
@@ -198,6 +238,34 @@ function handleConditional(node, isTrue, whenTrue, whenFalse) {
 }
 
 /**
+ * Handles a conditional definition node
+ * @param {*} node the slate variable node
+ * @param {*} whenTrue the nodes when true
+ * @param {*} whenFalse the nodes when false
+ * @returns {*} the ast node
+ */
+function handleConditionalDefinition(node, whenTrue, whenFalse) {
+    const data = node.data;
+
+    let result = {
+        $class : `${NS_PREFIX_TemplateMarkModel}ConditionalDefinition`,
+        name : data.name,
+    };
+
+    result.whenTrue = whenTrue;
+    result.whenFalse = whenFalse;
+
+    if (Object.prototype.hasOwnProperty.call(data,'elementType')) {
+        result.elementType = data.elementType;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'decorators')) {
+        result.decorators = data.decorators;
+    }
+
+    return handleMarks(node,result);
+}
+
+/**
  * Handles a optional node
  * @param {*} node the slate variable node
  * @param {*} hasSome is this optional is present
@@ -215,6 +283,34 @@ function handleOptional(node, hasSome, whenSome, whenNone) {
     };
 
     result.hasSome = hasSome;
+    result.whenSome = whenSome;
+    result.whenNone = whenNone;
+
+    if (Object.prototype.hasOwnProperty.call(data,'elementType')) {
+        result.elementType = data.elementType;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'decorators')) {
+        result.decorators = data.decorators;
+    }
+
+    return handleMarks(node,result);
+}
+
+/**
+ * Handles a optional definition node
+ * @param {*} node the slate variable node
+ * @param {*} whenSome the nodes when true
+ * @param {*} whenNone the nodes when false
+ * @returns {*} the ast node
+ */
+function handleOptionalDefinition(node, whenSome, whenNone) {
+    const data = node.data;
+
+    let result = {
+        $class : `${NS_PREFIX_TemplateMarkModel}OptionalDefinition`,
+        name : data.name,
+    };
+
     result.whenSome = whenSome;
     result.whenNone = whenNone;
 
@@ -266,6 +362,42 @@ function handleFormula(node) {
     return handleMarks(node,result);
 }
 
+/**
+ * Handles a formula definition
+ * @param {*} node the slate formula node
+ * @returns {*} the ast node
+ */
+function handleFormulaDefinition(node) {
+    let result = null;
+
+    node.children = []; // Reset the children for the inline to avoid recursion
+
+    const className = `${NS_PREFIX_CiceroMarkModel}Formula`;
+
+    result = {
+        $class : className,
+    };
+
+    const data = node.data;
+    if (Object.prototype.hasOwnProperty.call(data,'elementType')) {
+        result.elementType = data.elementType;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'decorators')) {
+        result.decorators = data.decorators;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'dependencies')) {
+        result.dependencies = data.dependencies;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'code')) {
+        result.code = data.code;
+    }
+    if (Object.prototype.hasOwnProperty.call(data,'name')) {
+        result.name = data.name;
+    }
+
+    return handleMarks(node,result);
+}
+
 module.exports = {
     removeEmptyParagraphs,
     getText,
@@ -273,7 +405,11 @@ module.exports = {
     handleMarks,
     handleText,
     handleVariable,
+    handleVariableDefinition,
     handleConditional,
+    handleConditionalDefinition,
     handleOptional,
+    handleOptionalDefinition,
     handleFormula,
+    handleFormulaDefinition,
 };
