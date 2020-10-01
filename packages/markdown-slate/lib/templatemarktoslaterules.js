@@ -18,6 +18,25 @@ const toslateutil = require('./toslateutil');
 
 const rules = {};
 
+rules.ContractDefinition = (thing,processChildren,parameters) => {
+    const data = {};
+    data.name = thing.name;
+    if (thing.src) {
+        data.src = thing.src;
+    }
+    if (thing.elementType) {
+        data.elementType = thing.elementType;
+    }
+    if (thing.decorators) {
+        data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
+    }
+    return {
+        object: 'block',
+        type: 'contract_definition',
+        data: data,
+        children: processChildren(thing,'nodes',parameters),
+    };
+};
 rules.ClauseDefinition = (thing,processChildren,parameters) => {
     const data = {};
     data.name = thing.name;
@@ -101,6 +120,21 @@ rules.OptionalDefinition = (thing,processChildren,parameters) => {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
     return toslateutil.handleBlockDefinition('optional_definition', data, nodes, localParameters);
+};
+rules.ListBlockDefinition = (thing,processChildren,parameters) => {
+    const data = { name: thing.name, tight: thing.tight, start: thing.start, delimiter: thing.delimiter, type: 'variable' };
+    if (thing.elementType) {
+        data.elementType = thing.elementType;
+    }
+    if (thing.decorators) {
+        data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
+    }
+    return {
+        object: 'block',
+        data: data,
+        type: thing.type === 'ordered' ? 'ol_list_block_definition' : 'ul_list_block_definition',
+        children: processChildren(thing,'nodes',parameters)
+    };
 };
 rules.FormulaDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name };
