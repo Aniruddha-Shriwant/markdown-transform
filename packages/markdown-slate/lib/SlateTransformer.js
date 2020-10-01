@@ -17,7 +17,7 @@
 const CiceroMarkTransformer = require('@accordproject/markdown-cicero').CiceroMarkTransformer;
 const TemplateMarkTransformer = require('@accordproject/markdown-template').TemplateMarkTransformer;
 const toslateutil = require('./toslateutil');
-const FromSlateVisitor = require('./FromSlateVisitor');
+const CiceroMarkFromSlateVisitor = require('./CiceroMarkFromSlateVisitor');
 const CiceroMarkToSlateVisitor = require('./CiceroMarkToSlateVisitor');
 const TemplateMarkToSlateVisitor = require('./TemplateMarkToSlateVisitor');
 
@@ -86,7 +86,7 @@ class SlateTransformer {
      */
     toCiceroMark(value) {
         const clonedValue = JSON.parse(JSON.stringify(value)); // Workaround in case value is immutable
-        const visitor = new FromSlateVisitor();
+        const visitor = new CiceroMarkFromSlateVisitor();
         return visitor.fromSlate(clonedValue);
     }
 

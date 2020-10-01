@@ -22,7 +22,7 @@ const commonmarktoslaterules = require('./commonmarktoslaterules');
  */
 class ToSlateVisitor {
     /**
-     * Constructor for a new slate visitor
+     * Constructor for a new visitor to slate
      * @param {*} rules - additional rules
      */
     constructor(rules) {

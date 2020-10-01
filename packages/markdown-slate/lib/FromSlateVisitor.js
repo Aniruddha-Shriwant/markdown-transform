@@ -24,10 +24,14 @@ const commonmarkfromslaterules = require('./commonmarkfromslaterules');
  */
 class FromSlateVisitor {
     /**
-     * Construct a visitor from slate
+     * Constructor for a new visitor from slate
+     * @param {*} rules - additional rules
      */
-    constructor() {
+    constructor(rules) {
         this.rules = commonmarkfromslaterules;
+        if (rules) {
+            this.rules = Object.assign(this.rules,rules);
+        }
     }
 
     /**

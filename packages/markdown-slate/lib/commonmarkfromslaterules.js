@@ -15,7 +15,6 @@
 'use strict';
 
 const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
-const { NS_PREFIX_CiceroMarkModel } = require('@accordproject/markdown-cicero').CiceroMarkModel;
 
 const fromslateutil = require('./fromslateutil');
 
@@ -78,67 +77,6 @@ rules.ol_list = (node,processNodes) => {
 };
 rules.ul_list = (node,processNodes) => {
     return {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-};
-
-// CiceroMark rules
-rules.ol_list_block = (node,processNodes) => {
-    let result;
-    result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-    if (node.data.elementType) {
-        result.elementType = node.data.elementType;
-    }
-    if (node.data.decorators) {
-        result.decorators = node.data.decorators;
-    }
-    return result;
-};
-rules.ul_list_block = (node,processNodes) => {
-    let result;
-    result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-    if (node.data.elementType) {
-        result.elementType = node.data.elementType;
-    }
-    if (node.data.decorators) {
-        result.decorators = node.data.decorators;
-    }
-    return result;
-};
-
-rules.clause = (node,processNodes) => {
-    // console.log(JSON.stringify(node, null, 4));
-    const result = {$class : `${NS_PREFIX_CiceroMarkModel}Clause`, name: node.data.name, nodes: []};
-    if (node.data.elementType) {
-        result.elementType = node.data.elementType;
-    }
-    if (node.data.decorators) {
-        result.decorators = node.data.decorators;
-    }
-    if (node.data.src) {
-        result.src = node.data.src;
-    }
-    return result;
-};
-rules.conditional = (node,processNodes) => {
-    const isTrue = node.data.isTrue;
-    let whenTrueNodes = [];
-    processNodes(whenTrueNodes, node.data.whenTrue);
-    let whenFalseNodes = [];
-    processNodes(whenFalseNodes, node.data.whenFalse);
-    return fromslateutil.handleConditional(node,isTrue,whenTrueNodes,whenFalseNodes);
-};
-rules.optional = (node,processNodes) => {
-    const hasSome = node.data.hasSome;
-    let whenSomeNodes = [];
-    processNodes(whenSomeNodes, node.data.whenSome);
-    let whenNoneNodes = [];
-    processNodes(whenNoneNodes, node.data.whenNone);
-    return fromslateutil.handleOptional(node,hasSome,whenSomeNodes,whenNoneNodes);
-};
-rules.variable = (node,processNodes) => {
-    return fromslateutil.handleVariable(node);
-};
-rules.formula = (node,processNodes) => {
-    return fromslateutil.handleFormula(node);
 };
 
 module.exports = rules;
