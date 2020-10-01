@@ -102,6 +102,21 @@ rules.Optional = (thing,processChildren,parameters) => {
     }
     return toslateutil.handleBlockDefinition('optional', data, nodes, localParameters);
 };
+rules.ListBlock = (thing,processChildren,parameters) => {
+    const data = { name: thing.name, tight: thing.tight, start: thing.start, delimiter: thing.delimiter, type: 'variable' };
+    if (thing.elementType) {
+        data.elementType = thing.elementType;
+    }
+    if (thing.decorators) {
+        data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
+    }
+    return {
+        object: 'block',
+        data: data,
+        type: thing.type === 'ordered' ? 'ol_list_block' : 'ul_list_block',
+        children: processChildren(thing,'nodes',parameters)
+    };
+};
 rules.Formula = (thing,processChildren,parameters) => {
     const data = { name: thing.name };
     if (thing.elementType) {

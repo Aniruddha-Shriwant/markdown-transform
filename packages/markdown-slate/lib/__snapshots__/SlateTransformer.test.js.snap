@@ -3402,6 +3402,3406 @@ Object {
 }
 `;
 
+exports[`ciceromark <-> slate converts volumediscountolist_slate.json to and from CiceroMark 1`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction fee, or a combination of both; and/or",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) a Monthly Flat Fee (if you meet our requirements).",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) the Discount,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) any amounts you owe us or our Affiliates,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iii) any amounts for which we have Chargebacks and",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iv) any Credits you submit. Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "SETTLEMENT",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "a) Settlement Amount. Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) the Discount,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) any amounts you owe us or our Affiliates,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iii) any amounts for which we have Chargebacks, and (iv) any Credits you submit. Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "b) Discount. The Discount is determined according to the following table:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.ciceromark.ListBlock",
+      "delimiter": "period",
+      "name": "rates",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "0.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.9",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.5",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "1.2",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "0.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`ciceromark <-> slate converts volumediscountolist_slate.json to and from CiceroMark 2`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction fee, or a combination of both; and/or",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) a Monthly Flat Fee (if you meet our requirements).",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) the Discount,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) any amounts you owe us or our Affiliates,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iii) any amounts for which we have Chargebacks and",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iv) any Credits you submit. Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "SETTLEMENT",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "a) Settlement Amount. Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(i) the Discount,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(ii) any amounts you owe us or our Affiliates,",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "(iii) any amounts for which we have Chargebacks, and (iv) any Credits you submit. Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "b) Discount. The Discount is determined according to the following table:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.ciceromark.ListBlock",
+      "delimiter": "period",
+      "name": "rates",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "0.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.9",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.5",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "1.2",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "0.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`ciceromark <-> slate converts volumediscountolist_slate.json to and from CiceroMark 3`] = `
+Object {
+  "document": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(i) a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "Transaction fee, or a combination of both; and/or",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(ii) a Monthly Flat Fee (if you meet our requirements).",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(i) the Discount,",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(ii) any amounts you owe us or our Affiliates,",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(iii) any amounts for which we have Chargebacks and",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(iv) any Credits you submit. Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "SETTLEMENT",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "a) Settlement Amount. Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(i) the Discount,",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(ii) any amounts you owe us or our Affiliates,",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "(iii) any amounts for which we have Chargebacks, and (iv) any Credits you submit. Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "b) Discount. The Discount is determined according to the following table:",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "0.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "3.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "10.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "3.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "10.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "50.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "2.9",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "50.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "500.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "2.5",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "500.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.2",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "0.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+        ],
+        "data": Object {
+          "delimiter": "period",
+          "name": "rates",
+          "start": "1",
+          "tight": "true",
+          "type": "variable",
+        },
+        "object": "block",
+        "type": "ol_list_block",
+      },
+    ],
+    "data": Object {},
+    "object": "document",
+  },
+}
+`;
+
+exports[`ciceromark <-> slate converts volumediscountulist_slate.json to and from CiceroMark 1`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "2",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Softbreak",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "Transaction fee, or a combination of both; and/or",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "a Monthly Flat Fee (if you meet our requirements).",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "the Discount,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts you owe us or our Affiliates,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts for which we have Chargebacks and",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any Credits you submit.",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "3",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "SETTLEMENT",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "4",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Settlement Amount.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "the Discount,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts you owe us or our Affiliates,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts for which we have Chargebacks, and",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any Credits you submit.",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "4",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "The Discount is determined according to the following table:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.ciceromark.ListBlock",
+      "delimiter": undefined,
+      "name": "rates",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "0.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.9",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.5",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "1.2",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "0.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": undefined,
+      "tight": "true",
+      "type": "bullet",
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`ciceromark <-> slate converts volumediscountulist_slate.json to and from CiceroMark 2`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "2",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Softbreak",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "Transaction fee, or a combination of both; and/or",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "a Monthly Flat Fee (if you meet our requirements).",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Softbreak",
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "the Discount,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts you owe us or our Affiliates,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts for which we have Chargebacks and",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any Credits you submit.",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "3",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "SETTLEMENT",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "4",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Settlement Amount.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.List",
+      "delimiter": "period",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "the Discount,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts you owe us or our Affiliates,",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any amounts for which we have Chargebacks, and",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "any Credits you submit.",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "start": "1",
+      "tight": "true",
+      "type": "ordered",
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Heading",
+      "level": "4",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "Discount.",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.commonmark.Paragraph",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Text",
+          "text": "The Discount is determined according to the following table:",
+        },
+      ],
+    },
+    Object {
+      "$class": "org.accordproject.ciceromark.ListBlock",
+      "name": "rates",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "0.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "3.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "10.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.9",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "50.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "2.5",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "500.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "1.2",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Item",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Paragraph",
+              "nodes": Array [
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeAbove",
+                  "value": "1000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million <= Volume < ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "volumeUpTo",
+                  "value": "1000000.0",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "$ million : ",
+                },
+                Object {
+                  "$class": "org.accordproject.ciceromark.Variable",
+                  "elementType": "Double",
+                  "name": "rate",
+                  "value": "0.1",
+                },
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": "%",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      "tight": "true",
+      "type": "bullet",
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`ciceromark <-> slate converts volumediscountulist_slate.json to and from CiceroMark 3`] = `
+Object {
+  "document": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Volume-Based Card Acceptance Agreement [Abbreviated]",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "heading_two",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "This Agreement is by and between Card, Inc., a New York corporation, and you, the Merchant. By accepting the Card, you agree to be bound by the Agreement.",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "Discount means an amount that we charge you for accepting the Card, which amount is:",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "a percentage (Discount Rate) of the face amount of the Charge that you submit, or a flat per-",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "",
+                      },
+                    ],
+                    "data": Object {},
+                    "object": "inline",
+                    "type": "softbreak",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "Transaction fee, or a combination of both; and/or",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "a Monthly Flat Fee (if you meet our requirements).",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+        ],
+        "data": Object {
+          "delimiter": "period",
+          "start": "1",
+          "tight": "true",
+        },
+        "object": "block",
+        "type": "ol_list",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Transaction Processing and Payments. Our Card acceptance, processing, and payment requirements are set forth in the Merchant Regulations. Some requirements are summarized here for ease of reference, but do not supersede the provisions in the Merchant Regulations.",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+            ],
+            "data": Object {},
+            "object": "inline",
+            "type": "softbreak",
+          },
+          Object {
+            "object": "text",
+            "text": "Payment for Charges. We will pay you, through our agent, according to your payment plan in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "the Discount,",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any amounts you owe us or our Affiliates,",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any amounts for which we have Chargebacks and",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any Credits you submit.",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+        ],
+        "data": Object {
+          "delimiter": "period",
+          "start": "1",
+          "tight": "true",
+        },
+        "object": "block",
+        "type": "ol_list",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Your initial Discount is indicated in the Agreement or otherwise provided to you in writing by us. In addition to your Discount we may charge you additional fees and assessments, as listed in the Merchant Regulations or as otherwise provided to you in writing by us. We may adjust any of these amounts and may change any other amount we charge you for accepting the Card.",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "SETTLEMENT",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "heading_three",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Settlement Amount.",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "heading_four",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Our agent will pay you according to your payment plan, as described below, in US dollars for the face amount of Charges submitted from your Establishments less all applicable deductions, rejections, and withholdings, which include:",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "the Discount,",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any amounts you owe us or our Affiliates,",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any amounts for which we have Chargebacks, and",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "any Credits you submit.",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+        ],
+        "data": Object {
+          "delimiter": "period",
+          "start": "1",
+          "tight": "true",
+        },
+        "object": "block",
+        "type": "ol_list",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Our agent will subtract the full amount of all applicable deductions, rejections, and withholdings, from this payment to you (or debit your Bank Account), but if it cannot, then you must pay it promptly upon demand.",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "Discount.",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "heading_four",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "object": "text",
+            "text": "The Discount is determined according to the following table:",
+          },
+        ],
+        "data": Object {},
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "0.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "3.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "10.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "3.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "10.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "50.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "2.9",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "50.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "500.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "2.5",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "500.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1.2",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeAbove",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million <= Volume < ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "1000000.0",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "volumeUpTo",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "$ million : ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "object": "text",
+                        "text": "0.1",
+                      },
+                    ],
+                    "data": Object {
+                      "elementType": "Double",
+                      "name": "rate",
+                    },
+                    "object": "inline",
+                    "type": "variable",
+                  },
+                  Object {
+                    "object": "text",
+                    "text": "%",
+                  },
+                ],
+                "data": Object {},
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "list_item",
+          },
+        ],
+        "data": Object {
+          "delimiter": undefined,
+          "name": "rates",
+          "start": undefined,
+          "tight": "true",
+          "type": "variable",
+        },
+        "object": "block",
+        "type": "ul_list_block",
+      },
+    ],
+    "data": Object {},
+    "object": "document",
+  },
+}
+`;
+
 exports[`markdown <-> slate converts bold.json to and from Markdown 1`] = `
 Object {
   "$class": "org.accordproject.commonmark.Document",

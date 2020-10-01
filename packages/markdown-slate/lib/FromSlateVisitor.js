@@ -17,7 +17,7 @@
 const { NS_PREFIX_CommonMarkModel } = require('@accordproject/markdown-common').CommonMarkModel;
 
 const fromslateutil = require('./fromslateutil');
-const fromslaterules = require('./fromslaterules');
+const commonmarkfromslaterules = require('./commonmarkfromslaterules');
 
 /**
  * Converts a Slate DOM to a Markdown DOM
@@ -27,7 +27,7 @@ class FromSlateVisitor {
      * Construct a visitor from slate
      */
     constructor() {
-        this.rules = fromslaterules;
+        this.rules = commonmarkfromslaterules;
     }
 
     /**

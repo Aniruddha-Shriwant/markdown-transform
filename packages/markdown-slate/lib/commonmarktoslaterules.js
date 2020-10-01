@@ -159,21 +159,6 @@ rules.List = (thing,processChildren,parameters) => {
         children: processChildren(thing,'nodes',parameters)
     };
 };
-rules.ListBlock = (thing,processChildren,parameters) => {
-    const data = { name: thing.name, tight: thing.tight, start: thing.start, delimiter: thing.delimiter, type: 'variable' };
-    if (thing.elementType) {
-        data.elementType = thing.elementType;
-    }
-    if (thing.decorators) {
-        data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
-    }
-    return {
-        object: 'block',
-        data: data,
-        type: thing.type === 'ordered' ? 'ol_list' : 'ul_list',
-        children: processChildren(thing,'nodes',parameters)
-    };
-};
 rules.Item = (thing,processChildren,parameters) => {
     return {
         object: 'block',

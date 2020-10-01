@@ -73,40 +73,37 @@ rules.image = (node,processNodes) => {
 rules.list_item = (node,processNodes) => {
     return {$class : `${NS_PREFIX_CommonMarkModel}Item`, nodes: []};
 };
-
-// Shared CommonMark / CiceroMark rules ???
 rules.ol_list = (node,processNodes) => {
-    let result;
-    if (node.data.type === 'variable') {
-        result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-        if (node.data.elementType) {
-            result.elementType = node.data.elementType;
-        }
-        if (node.data.decorators) {
-            result.decorators = node.data.decorators;
-        }
-    } else {
-        result = {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-    }
-    return result;
+    return {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
 };
 rules.ul_list = (node,processNodes) => {
-    let result;
-    if (node.data.type === 'variable') {
-        result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-        if (node.data.elementType) {
-            result.elementType = node.data.elementType;
-        }
-        if (node.data.decorators) {
-            result.decorators = node.data.decorators;
-        }
-    } else {
-        result = {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
-    }
-    return result;
+    return {$class : `${NS_PREFIX_CommonMarkModel}List`, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
 };
 
 // CiceroMark rules
+rules.ol_list_block = (node,processNodes) => {
+    let result;
+    result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+    if (node.data.elementType) {
+        result.elementType = node.data.elementType;
+    }
+    if (node.data.decorators) {
+        result.decorators = node.data.decorators;
+    }
+    return result;
+};
+rules.ul_list_block = (node,processNodes) => {
+    let result;
+    result = {$class : `${NS_PREFIX_CiceroMarkModel}ListBlock`, name: node.data.name, type: 'bullet', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
+    if (node.data.elementType) {
+        result.elementType = node.data.elementType;
+    }
+    if (node.data.decorators) {
+        result.decorators = node.data.decorators;
+    }
+    return result;
+};
+
 rules.clause = (node,processNodes) => {
     // console.log(JSON.stringify(node, null, 4));
     const result = {$class : `${NS_PREFIX_CiceroMarkModel}Clause`, name: node.data.name, nodes: []};
