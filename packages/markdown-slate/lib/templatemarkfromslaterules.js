@@ -21,6 +21,51 @@ const fromslateutil = require('./fromslateutil');
 const rules = {};
 
 // CiceroMark rules
+rules.contract_definition = (node,processNodes) => {
+    // console.log(JSON.stringify(node, null, 4));
+    const result = {$class : `${NS_PREFIX_TemplateMarkModel}ContractDefinition`, name: node.data.name, nodes: []};
+    if (node.data.elementType) {
+        result.elementType = node.data.elementType;
+    }
+    if (node.data.decorators) {
+        result.decorators = node.data.decorators;
+    }
+    if (node.data.src) {
+        result.src = node.data.src;
+    }
+    return result;
+};
+rules.clause_definition = (node,processNodes) => {
+    // console.log(JSON.stringify(node, null, 4));
+    const result = {$class : `${NS_PREFIX_TemplateMarkModel}ClauseDefinition`, name: node.data.name, nodes: []};
+    if (node.data.elementType) {
+        result.elementType = node.data.elementType;
+    }
+    if (node.data.decorators) {
+        result.decorators = node.data.decorators;
+    }
+    if (node.data.src) {
+        result.src = node.data.src;
+    }
+    return result;
+};
+rules.variable_definition = (node,processNodes) => {
+    return fromslateutil.handleVariableDefinition(node);
+};
+rules.conditional_definition = (node,processNodes) => {
+    let whenTrueNodes = [];
+    processNodes(whenTrueNodes, node.data.whenTrue);
+    let whenFalseNodes = [];
+    processNodes(whenFalseNodes, node.data.whenFalse);
+    return fromslateutil.handleConditionalDefinition(node,whenTrueNodes,whenFalseNodes);
+};
+rules.optional_definition = (node,processNodes) => {
+    let whenSomeNodes = [];
+    processNodes(whenSomeNodes, node.data.whenSome);
+    let whenNoneNodes = [];
+    processNodes(whenNoneNodes, node.data.whenNone);
+    return fromslateutil.handleOptionalDefinition(node,whenSomeNodes,whenNoneNodes);
+};
 rules.ol_list_block_definition = (node,processNodes) => {
     let result;
     result = {$class : `${NS_PREFIX_TemplateMarkModel}ListBlockDefinition`, name: node.data.name, type: 'ordered', delimiter: node.data.delimiter, start: node.data.start, tight: node.data.tight, nodes: []};
@@ -42,38 +87,6 @@ rules.ul_list_block_definition = (node,processNodes) => {
         result.decorators = node.data.decorators;
     }
     return result;
-};
-
-rules.clause_definition = (node,processNodes) => {
-    // console.log(JSON.stringify(node, null, 4));
-    const result = {$class : `${NS_PREFIX_TemplateMarkModel}ClauseDefinition`, name: node.data.name, nodes: []};
-    if (node.data.elementType) {
-        result.elementType = node.data.elementType;
-    }
-    if (node.data.decorators) {
-        result.decorators = node.data.decorators;
-    }
-    if (node.data.src) {
-        result.src = node.data.src;
-    }
-    return result;
-};
-rules.conditional_definition = (node,processNodes) => {
-    let whenTrueNodes = [];
-    processNodes(whenTrueNodes, node.data.whenTrue);
-    let whenFalseNodes = [];
-    processNodes(whenFalseNodes, node.data.whenFalse);
-    return fromslateutil.handleConditionalDefinition(node,whenTrueNodes,whenFalseNodes);
-};
-rules.optional_definition = (node,processNodes) => {
-    let whenSomeNodes = [];
-    processNodes(whenSomeNodes, node.data.whenSome);
-    let whenNoneNodes = [];
-    processNodes(whenNoneNodes, node.data.whenNone);
-    return fromslateutil.handleOptionalDefinition(node,whenSomeNodes,whenNoneNodes);
-};
-rules.variable_definition = (node,processNodes) => {
-    return fromslateutil.handleVariableDefinition(node);
 };
 rules.formula_definition = (node,processNodes) => {
     return fromslateutil.handleFormulaDefinition(node);

@@ -10666,6 +10666,1633 @@ to this agreement.
 More text"
 `;
 
+exports[`templatemark <-> slate converts acceptance_slate.json to and from TemplateMark 1`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.templatemark.ClauseDefinition",
+      "elementType": "org.accordproject.acceptanceofdelivery.AcceptanceOfDeliveryClause",
+      "name": "top",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance of Delivery.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " will be deemed to have completed its delivery obligations",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "if in ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "'s opinion, the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " satisfies the",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance Criteria, and ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " notifies ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " in writing",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "that it is accepting the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ".",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Inspection and Notice.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " will have ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Long",
+              "name": "businessDays",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " Business Days to inspect and",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "evaluate the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " on the delivery date before notifying",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " that it is either accepting or rejecting the",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ".",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance Criteria.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "The \\"Acceptance Criteria\\" are the specifications the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "must meet for the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " to comply with its requirements and",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "obligations under this agreement, detailed in ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "attachment",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ", attached",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "to this agreement.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`templatemark <-> slate converts acceptance_slate.json to and from TemplateMark 2`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.templatemark.ClauseDefinition",
+      "elementType": "org.accordproject.acceptanceofdelivery.AcceptanceOfDeliveryClause",
+      "name": "top",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance of Delivery.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " will be deemed to have completed its delivery obligations",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "if in ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "'s opinion, the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " satisfies the",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance Criteria, and ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " notifies ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " in writing",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "that it is accepting the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ".",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Inspection and Notice.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "receiver",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " will have ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Long",
+              "name": "businessDays",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " Business Days to inspect and",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "evaluate the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " on the delivery date before notifying",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " that it is either accepting or rejecting the",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ".",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Acceptance Criteria.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "The \\"Acceptance Criteria\\" are the specifications the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "deliverable",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "must meet for the ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.organization.Organization",
+              "identifiedBy": "identifier",
+              "name": "shipper",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " to comply with its requirements and",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "obligations under this agreement, detailed in ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "String",
+              "name": "attachment",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ", attached",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "to this agreement.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`templatemark <-> slate converts acceptance_slate.json to and from TemplateMark 3`] = `
+Object {
+  "document": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "Acceptance of Delivery.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "heading_two",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "hippe",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "shipper",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " will be deemed to have completed its delivery obligations",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "if in ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eceive",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "receiver",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "'s opinion, the ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eliverabl",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "deliverable",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " satisfies the",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "Acceptance Criteria, and ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eceive",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "receiver",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " notifies ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "hippe",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "shipper",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " in writing",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "that it is accepting the ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eliverabl",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "deliverable",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": ".",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "paragraph",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "Inspection and Notice.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "heading_two",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eceive",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "receiver",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " will have ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "businessDays",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "Long",
+                  "name": "businessDays",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " Business Days to inspect and",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "evaluate the ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eliverabl",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "deliverable",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " on the delivery date before notifying",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "hippe",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "shipper",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " that it is either accepting or rejecting the",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eliverabl",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "deliverable",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": ".",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "paragraph",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "Acceptance Criteria.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "heading_two",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "The \\"Acceptance Criteria\\" are the specifications the ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "eliverabl",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "deliverable",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "must meet for the ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "hippe",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.organization.Organization",
+                  "identifiedBy": "identifier",
+                  "name": "shipper",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " to comply with its requirements and",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "obligations under this agreement, detailed in ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "ttachmen",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "String",
+                  "name": "attachment",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": ", attached",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "to this agreement.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "paragraph",
+          },
+        ],
+        "data": Object {
+          "elementType": "org.accordproject.acceptanceofdelivery.AcceptanceOfDeliveryClause",
+          "name": "top",
+        },
+        "object": "block",
+        "type": "clause_definition",
+      },
+    ],
+    "data": Object {},
+    "object": "document",
+  },
+}
+`;
+
+exports[`templatemark <-> slate converts latedelivery_slate.json to and from TemplateMark 1`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.templatemark.ContractDefinition",
+      "elementType": "org.accordproject.latedeliveryandpenalty.LateDeliveryAndPenaltyContract",
+      "name": "top",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Late Delivery and Penalty.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "In case of delayed delivery",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.ConditionalDefinition",
+              "name": "forceMajeure",
+              "whenFalse": Array [],
+              "whenTrue": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": " except for Force Majeure cases,",
+                },
+              ],
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.cicero.contract.AccordParty",
+              "name": "seller",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " (the Seller) shall pay to ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.cicero.contract.AccordParty",
+              "name": "buyer",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " (the Buyer) for every ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.time.Duration",
+              "name": "penaltyDuration",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "of delay penalty amounting to ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Double",
+              "name": "penaltyPercentage",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "% of the total value of the Equipment",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "whose delivery has been delayed. Any fractional part of a ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.EnumVariableDefinition",
+              "elementType": "org.accordproject.time.TemporalUnit",
+              "enumValues": Array [
+                "seconds",
+                "minutes",
+                "hours",
+                "days",
+                "weeks",
+              ],
+              "name": "fractionalPart",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " is to be",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "considered a full ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.EnumVariableDefinition",
+              "elementType": "org.accordproject.time.TemporalUnit",
+              "enumValues": Array [
+                "seconds",
+                "minutes",
+                "hours",
+                "days",
+                "weeks",
+              ],
+              "name": "fractionalPart",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ". The total amount of penalty shall not however,",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "exceed ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Double",
+              "name": "capPercentage",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "% of the total value of the Equipment involved in late delivery.",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "If the delay is more than ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.time.Duration",
+              "name": "termination",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ", the Buyer is entitled to terminate this Contract.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`templatemark <-> slate converts latedelivery_slate.json to and from TemplateMark 2`] = `
+Object {
+  "$class": "org.accordproject.commonmark.Document",
+  "nodes": Array [
+    Object {
+      "$class": "org.accordproject.templatemark.ContractDefinition",
+      "elementType": "org.accordproject.latedeliveryandpenalty.LateDeliveryAndPenaltyContract",
+      "name": "top",
+      "nodes": Array [
+        Object {
+          "$class": "org.accordproject.commonmark.Heading",
+          "level": "2",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "Late Delivery and Penalty.",
+            },
+          ],
+        },
+        Object {
+          "$class": "org.accordproject.commonmark.Paragraph",
+          "nodes": Array [
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "In case of delayed delivery",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.ConditionalDefinition",
+              "name": "forceMajeure",
+              "whenFalse": Array [],
+              "whenTrue": Array [
+                Object {
+                  "$class": "org.accordproject.commonmark.Text",
+                  "text": " except for Force Majeure cases,",
+                },
+              ],
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.cicero.contract.AccordParty",
+              "name": "seller",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " (the Seller) shall pay to ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.cicero.contract.AccordParty",
+              "name": "buyer",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " (the Buyer) for every ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.time.Duration",
+              "name": "penaltyDuration",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "of delay penalty amounting to ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Double",
+              "name": "penaltyPercentage",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "% of the total value of the Equipment",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "whose delivery has been delayed. Any fractional part of a ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.EnumVariableDefinition",
+              "elementType": "org.accordproject.time.TemporalUnit",
+              "enumValues": Array [
+                "seconds",
+                "minutes",
+                "hours",
+                "days",
+                "weeks",
+              ],
+              "name": "fractionalPart",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": " is to be",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "considered a full ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.EnumVariableDefinition",
+              "elementType": "org.accordproject.time.TemporalUnit",
+              "enumValues": Array [
+                "seconds",
+                "minutes",
+                "hours",
+                "days",
+                "weeks",
+              ],
+              "name": "fractionalPart",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ". The total amount of penalty shall not however,",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "exceed ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "Double",
+              "name": "capPercentage",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "% of the total value of the Equipment involved in late delivery.",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Softbreak",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": "If the delay is more than ",
+            },
+            Object {
+              "$class": "org.accordproject.templatemark.VariableDefinition",
+              "elementType": "org.accordproject.time.Duration",
+              "name": "termination",
+            },
+            Object {
+              "$class": "org.accordproject.commonmark.Text",
+              "text": ", the Buyer is entitled to terminate this Contract.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  "xmlns": "http://commonmark.org/xml/1.0",
+}
+`;
+
+exports[`templatemark <-> slate converts latedelivery_slate.json to and from TemplateMark 3`] = `
+Object {
+  "document": Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "Late Delivery and Penalty.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "heading_two",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "object": "text",
+                "text": "In case of delayed delivery",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {
+                  "isTrue": undefined,
+                  "name": "forceMajeure",
+                  "whenFalse": Array [],
+                  "whenTrue": Array [
+                    Object {
+                      "object": "text",
+                      "text": " except for Force Majeure cases,",
+                    },
+                  ],
+                },
+                "object": "inline",
+                "type": "conditional_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "seller",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.cicero.contract.AccordParty",
+                  "name": "seller",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " (the Seller) shall pay to ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "buyer",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.cicero.contract.AccordParty",
+                  "name": "buyer",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " (the Buyer) for every ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "penaltyDuration",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.time.Duration",
+                  "name": "penaltyDuration",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "of delay penalty amounting to ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "penaltyPercentage",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "Double",
+                  "name": "penaltyPercentage",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "% of the total value of the Equipment",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "whose delivery has been delayed. Any fractional part of a ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "fractionalPart",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.time.TemporalUnit",
+                  "enumValues": Array [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "weeks",
+                  ],
+                  "name": "fractionalPart",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": " is to be",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "considered a full ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "fractionalPart",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.time.TemporalUnit",
+                  "enumValues": Array [
+                    "seconds",
+                    "minutes",
+                    "hours",
+                    "days",
+                    "weeks",
+                  ],
+                  "name": "fractionalPart",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": ". The total amount of penalty shall not however,",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "exceed ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "capPercentage",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "Double",
+                  "name": "capPercentage",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": "% of the total value of the Equipment involved in late delivery.",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "",
+                  },
+                ],
+                "data": Object {},
+                "object": "inline",
+                "type": "softbreak",
+              },
+              Object {
+                "object": "text",
+                "text": "If the delay is more than ",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "object": "text",
+                    "text": "termination",
+                  },
+                ],
+                "data": Object {
+                  "elementType": "org.accordproject.time.Duration",
+                  "name": "termination",
+                },
+                "object": "inline",
+                "type": "variable_definition",
+              },
+              Object {
+                "object": "text",
+                "text": ", the Buyer is entitled to terminate this Contract.",
+              },
+            ],
+            "data": Object {},
+            "object": "block",
+            "type": "paragraph",
+          },
+        ],
+        "data": Object {
+          "elementType": "org.accordproject.latedeliveryandpenalty.LateDeliveryAndPenaltyContract",
+          "name": "top",
+        },
+        "object": "block",
+        "type": "contract_definition",
+      },
+    ],
+    "data": Object {},
+    "object": "document",
+  },
+}
+`;
+
 exports[`templatemark <-> slate converts test1_slate.json to and from TemplateMark 1`] = `
 Object {
   "$class": "org.accordproject.commonmark.Document",
@@ -11186,7 +12813,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": undefined,
+                    "text": "elle",
                   },
                 ],
                 "data": Object {
@@ -11204,7 +12831,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": undefined,
+                    "text": "uye",
                   },
                 ],
                 "data": Object {
@@ -11222,7 +12849,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": undefined,
+                    "text": "amount",
                   },
                 ],
                 "data": Object {
@@ -11240,7 +12867,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": undefined,
+                    "text": "currency",
                   },
                 ],
                 "data": Object {
