@@ -67,7 +67,7 @@ rules.VariableDefinition = (thing,processChildren,parameters) => {
     if (thing.identifiedBy) {
         data.identifiedBy = thing.identifiedBy;
     }
-    return toslateutil.handleVariable('variable_definition', data, thing.name, parameters);
+    return toslateutil.handleVariableDefinition('variable_definition', data, thing.name, parameters);
 };
 rules.FormattedVariableDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name, format: thing.format };
@@ -77,7 +77,7 @@ rules.FormattedVariableDefinition = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleVariable('variable_definition', data, thing.name, parameters);
+    return toslateutil.handleVariableDefinition('variable_definition', data, thing.name, parameters);
 };
 rules.EnumVariableDefinition = (thing,processChildren,parameters) => {
     const data = { name: thing.name, enumValues: thing.enumValues };
@@ -87,7 +87,7 @@ rules.EnumVariableDefinition = (thing,processChildren,parameters) => {
     if (thing.decorators) {
         data.decorators = thing.decorators.map(x => parameters.serializer.toJSON(x));
     }
-    return toslateutil.handleVariable('variable_definition', data, thing.name, parameters);
+    return toslateutil.handleVariableDefinition('variable_definition', data, thing.name, parameters);
 };
 rules.ConditionalDefinition = (thing,processChildren,parameters) => {
     const localParameters = Object.assign({},parameters);

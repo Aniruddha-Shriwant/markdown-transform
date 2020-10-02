@@ -113,7 +113,7 @@ function handleBlockDefinition(name, data, nodes, parameters) {
 }
 
 /**
- * Converts a variable node to a pdf make text node with marks
+ * Converts a variable node to a text node with marks
  * @param {*} type - the type of variable
  * @param {*} data - the data for the variable
  * @param {*} text - the text for the variable
@@ -125,6 +125,23 @@ function handleVariable(type, data, text, parameters) {
     const textNode = {
         object: 'text',
         text: fixedText
+    };
+
+    return handleBlockDefinition(type, data, [textNode], parameters);
+}
+
+/**
+ * Converts a variable definition node to a text node with marks
+ * @param {*} type - the type of variable
+ * @param {*} data - the data for the variable
+ * @param {*} text - the text for the variable
+ * @param {*} parameters the parameters
+ * @returns {*} the slate text node with marks
+ */
+function handleVariableDefinition(type, data, text, parameters) {
+    const textNode = {
+        object: 'text',
+        text: text
     };
 
     return handleBlockDefinition(type, data, [textNode], parameters);
@@ -196,6 +213,7 @@ module.exports = {
     handleFormattedText,
     handleBlockDefinition,
     handleVariable,
+    handleVariableDefinition,
     handleFormula,
     cleanup,
 };

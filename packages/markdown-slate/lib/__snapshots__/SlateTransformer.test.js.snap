@@ -11191,7 +11191,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "hippe",
+                    "text": "shipper",
                   },
                 ],
                 "data": Object {
@@ -11225,7 +11225,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eceive",
+                    "text": "receiver",
                   },
                 ],
                 "data": Object {
@@ -11244,7 +11244,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eliverabl",
+                    "text": "deliverable",
                   },
                 ],
                 "data": Object {
@@ -11277,7 +11277,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eceive",
+                    "text": "receiver",
                   },
                 ],
                 "data": Object {
@@ -11296,7 +11296,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "hippe",
+                    "text": "shipper",
                   },
                 ],
                 "data": Object {
@@ -11330,7 +11330,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eliverabl",
+                    "text": "deliverable",
                   },
                 ],
                 "data": Object {
@@ -11370,7 +11370,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eceive",
+                    "text": "receiver",
                   },
                 ],
                 "data": Object {
@@ -11422,7 +11422,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eliverabl",
+                    "text": "deliverable",
                   },
                 ],
                 "data": Object {
@@ -11455,7 +11455,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "hippe",
+                    "text": "shipper",
                   },
                 ],
                 "data": Object {
@@ -11489,7 +11489,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eliverabl",
+                    "text": "deliverable",
                   },
                 ],
                 "data": Object {
@@ -11529,7 +11529,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "eliverabl",
+                    "text": "deliverable",
                   },
                 ],
                 "data": Object {
@@ -11562,7 +11562,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "hippe",
+                    "text": "shipper",
                   },
                 ],
                 "data": Object {
@@ -11596,7 +11596,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "ttachmen",
+                    "text": "attachment",
                   },
                 ],
                 "data": Object {
@@ -12813,7 +12813,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "elle",
+                    "text": "seller",
                   },
                 ],
                 "data": Object {
@@ -12831,7 +12831,7 @@ Object {
                 "children": Array [
                   Object {
                     "object": "text",
-                    "text": "uye",
+                    "text": "buyer",
                   },
                 ],
                 "data": Object {
